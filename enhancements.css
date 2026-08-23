@@ -57,13 +57,13 @@
 .institution-logos img,
 .education-logo img {
   width: auto;
-  max-width: 112px;
-  height: 25px;
+  max-width: 150px;
+  height: 36px;
   object-fit: contain;
   object-position: left center;
 }
-.institution-logos img[src="mofa-logo.png"] { height: 27px; }
-.education-logo img.kma { width: 32px; height: 32px; }
+.institution-logos img[src="mofa-logo.png"] { height: 38px; }
+.education-logo img.kma { width: 42px; height: 42px; }
 .uae-flag {
   width: 26px;
   height: 18px;
@@ -71,3 +71,4 @@
   object-fit: cover;
   vertical-align: -3px;
 }
+
