@@ -94,7 +94,12 @@
   object-position: left center;
 }
 .institution-logos img[src="mofa-logo.png"] { height: 38px; }
-.institution-logos .mofa-horizontal { width: 120px; height: auto; }
+.institution-logos .mofa-horizontal {
+  width: 90px;
+  max-width: 90px;
+  height: auto;
+  image-rendering: auto;
+}
 .education-logo img.kma { width: 42px; height: 42px; }
 .title-logo {
   width: 30px;
@@ -125,6 +130,10 @@
   height: 48px;
   object-fit: contain;
 }
+.honor-logos img[src="uae-mod-logo.jpg"] {
+  width: 78px;
+  height: 78px;
+}
 .logo-line img {
   width: 62px;
   height: 28px;
@@ -139,3 +148,4 @@
   object-fit: cover;
   vertical-align: -3px;
 }
+
