@@ -1,0 +1,38 @@
+{
+  "heading": "Education",
+  "items": [
+    {
+      "order": 10,
+      "published": true,
+      "title": "PhD Student, Science & Technology Policy",
+      "meta": "KAIST · Advisor: Seokkyun Joshua Woo",
+      "summary": "",
+      "time": "2025–Present",
+      "logos": [
+        "kaist"
+      ]
+    },
+    {
+      "order": 20,
+      "published": true,
+      "title": "MS, Science & Technology Policy",
+      "meta": "KAIST · Advisor: Soyoung Kim",
+      "summary": "",
+      "time": "2022–2024",
+      "logos": [
+        "kaist"
+      ]
+    },
+    {
+      "order": 30,
+      "published": true,
+      "title": "BA, International Relations · BMAS, Military Art & Science",
+      "meta": "Korea Military Academy",
+      "summary": "",
+      "time": "2008–2012",
+      "logos": [
+        "kma"
+      ]
+    }
+  ]
+}

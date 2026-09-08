@@ -1,0 +1,52 @@
+{
+  "heading": "Experience",
+  "items": [
+    {
+      "order": 10,
+      "published": true,
+      "title": "Defense Security Policy",
+      "time": "Feb 2026–Present",
+      "roles": [
+        {
+          "title": "Security Regulations Planning Officer",
+          "organization": "Military Security Office, Defense Counterintelligence Command",
+          "logo": "dcc"
+        },
+        {
+          "title": "Security Policy Control Officer",
+          "organization": "Security Policy Division, Defense Security Support Group",
+          "logo": "mnd"
+        }
+      ],
+      "summary": "Develop national defense security laws, regulations, and institutional frameworks; oversee security management for classified defense programs; and formulate ROK–U.S. information-sharing guidance and defense AI and data-security policy. Conduct long-term defense security policy planning and analyze policy vulnerabilities and implementation practices."
+    },
+    {
+      "order": 20,
+      "published": true,
+      "title": "Chief Counterintelligence Officer",
+      "time": "Feb 2024–May 2025",
+      "roles": [
+        {
+          "title": "Chief Counterintelligence Officer",
+          "organization": "ROK Military Training Cooperation Group in the UAE (Akh Unit)",
+          "logo": "uae"
+        }
+      ],
+      "summary": "Directed unit-wide security and counterintelligence; coordinated with the UAE military, information-security institutions, and defense companies; and assessed security risks associated with overseas defense programs and information exchange."
+    },
+    {
+      "order": 30,
+      "published": true,
+      "title": "C4I & Firepower Systems Analysis Officer",
+      "time": "Jan 2020–Jan 2022",
+      "roles": [
+        {
+          "title": "C4I & Firepower Systems Analysis Officer",
+          "organization": "Defense Industry Security Office, Defense Security Support Command",
+          "logo": "dssc"
+        }
+      ],
+      "summary": "Analyzed security and counterintelligence risks throughout the lifecycle of C4I and firepower weapon systems—from requirements development through operations and sustainment—and coordinated the protection of defense technology, test data, supply chains, and contractor networks with relevant agencies."
+    }
+  ]
+}

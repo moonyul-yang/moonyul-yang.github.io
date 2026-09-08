@@ -1,0 +1,27 @@
+{
+  "heading": "Research",
+  "items": [
+    {
+      "order": 10,
+      "published": true,
+      "title": "Dual-Use & Strategic Technology",
+      "meta": "",
+      "summary": "Defining and measuring technological duality at the patent level, with attention to sensitivity, controllability, and policy relevance."
+    },
+    {
+      "order": 20,
+      "published": true,
+      "title": "Export Controls",
+      "meta": "",
+      "summary": "Examining how multilateral control regimes and national policies shape the development and diffusion of strategic technologies."
+    },
+    {
+      "order": 30,
+      "published": true,
+      "title": "Geopolitical Knowledge Flows",
+      "meta": "",
+      "summary": "Tracing how geopolitical relations redirect knowledge across patents, firms, countries, and defense-industrial supply networks."
+    }
+  ],
+  "methods_note": "Patent and citation data; computational text analysis; embedding retrieval; LLM-assisted classification."
+}

@@ -1,0 +1,5 @@
+{%- assign prefix_https = include.url | slice: 0, 8 -%}
+{%- assign prefix_http = include.url | slice: 0, 7 -%}
+{%- if prefix_https == 'https://' or prefix_http == 'http://' -%}
+<a href="{{ include.url | escape }}">{{ include.label | default: 'Read more' | escape }}</a>
+{%- endif -%}

@@ -1,0 +1,31 @@
+{
+  "heading": "Research Projects",
+  "items": [
+    {
+      "order": 10,
+      "published": true,
+      "title": "National Space Policy and International Cooperation in an Era of Rising Techno-Nationalism",
+      "meta": "Researcher · Future Space Research Center, Ministry of Science and ICT · May 2022–Dec 2026",
+      "summary": "Analyzes space-policy trends and technological competition among major countries through the lens of techno-nationalism, and explores the implications of satellite navigation and satellite technologies for global sustainable development from the perspective of international technology cooperation. The project also supports the development of interdisciplinary technology-policy specialists through collaboration among participating universities.",
+      "logos": [
+        "kaist",
+        "msit"
+      ],
+      "note_label": "Research consortium:",
+      "note": "Sejong University (lead), KAIST, Seoul National University, Yonsei University, and Hongik University."
+    },
+    {
+      "order": 20,
+      "published": true,
+      "title": "Emerging Technologies and Emerging Security Issues",
+      "meta": "Researcher · KAIST–Ministry of Foreign Affairs, 2023",
+      "summary": "Analyzed the security implications of AI, quantum, biotechnology, and nanotechnology and compared policy approaches in the United States, European Union, and China. The project proposed risk-based, multi-level governance linking domestic regulation with bilateral and multilateral cooperation, and contributed to policy-report preparation and expert sessions on responsible AI, cybersecurity, and emerging-security governance.",
+      "logos": [
+        "kaist",
+        "mofa"
+      ],
+      "note_label": "",
+      "note": ""
+    }
+  ]
+}

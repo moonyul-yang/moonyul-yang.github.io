@@ -1,0 +1,844 @@
+# Pages CMS — editing here publishes to the public GitHub repository.
+media:
+  -
+    name: "images"
+    label: "사진·로고 (공개 이미지 전용)"
+    input: "assets/images"
+    output: "/assets/images"
+    extensions:
+      - "png"
+      - "jpg"
+      - "jpeg"
+      - "webp"
+      - "svg"
+    rename: "safe"
+content:
+  -
+    name: "profile"
+    label: "01 기본 소개·사진"
+    type: "file"
+    path: "_data/profile.json"
+    format: "json"
+    fields:
+      -
+        name: "name"
+        label: "영문 이름"
+        type: "string"
+        required: true
+      -
+        name: "korean_name"
+        label: "한글 이름"
+        type: "string"
+      -
+        name: "status"
+        label: "학적·직함"
+        type: "string"
+        required: true
+      -
+        name: "university"
+        label: "학교"
+        type: "string"
+      -
+        name: "department"
+        label: "대학원·학과"
+        type: "string"
+      -
+        name: "rank"
+        label: "군 소속·계급"
+        type: "string"
+      -
+        name: "location"
+        label: "활동 지역"
+        type: "string"
+      -
+        name: "email"
+        label: "공개 이메일"
+        type: "string"
+        pattern:
+          regex: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+          message: "이메일 형식으로 입력하세요."
+      -
+        name: "github_url"
+        label: "GitHub 프로필 주소"
+        type: "string"
+        pattern: "^https://github\\.com/[A-Za-z0-9-]+/?$"
+      -
+        name: "portrait"
+        label: "프로필 사진"
+        type: "image"
+        options:
+          media: "images"
+      -
+        name: "tools"
+        label: "도구 목록"
+        type: "string"
+      -
+        name: "tools_note"
+        label: "도구 설명"
+        type: "string"
+      -
+        name: "page_title"
+        label: "브라우저·검색 제목"
+        type: "string"
+        required: true
+      -
+        name: "description"
+        label: "검색 소개문"
+        type: "text"
+  -
+    name: "about"
+    label: "02 소개문·관심 키워드"
+    type: "file"
+    path: "_data/about.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "paragraphs"
+        label: "소개문 문단"
+        type: "text"
+        list: true
+      -
+        name: "current_heading"
+        label: "현재 연구 제목"
+        type: "string"
+      -
+        name: "current_research"
+        label: "현재 연구 설명"
+        type: "text"
+      -
+        name: "academic_areas"
+        label: "학술 영역"
+        type: "text"
+        description: "키워드 하나씩 줄을 바꾸어 입력하세요."
+      -
+        name: "methods"
+        label: "방법론"
+        type: "text"
+        description: "키워드 하나씩 줄을 바꾸어 입력하세요."
+      -
+        name: "regional_interests"
+        label: "지역적 관심"
+        type: "text"
+        description: "지역 하나씩 줄을 바꾸어 입력하세요."
+  -
+    name: "research"
+    label: "03 연구 주제"
+    type: "file"
+    path: "_data/research.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "methods_note"
+        label: "하단 방법론 설명"
+        type: "text"
+      -
+        name: "items"
+        label: "항목 목록"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          -
+            name: "order"
+            label: "표시 순서 (작은 숫자가 위)"
+            type: "number"
+            required: true
+            default: 100
+          -
+            name: "published"
+            label: "홈페이지에 표시"
+            type: "boolean"
+            default: false
+            description: "켜고 저장하면 홈페이지에 공개됩니다. 꺼도 공개 GitHub 저장소에는 내용이 남습니다."
+          -
+            name: "title"
+            label: "제목"
+            type: "string"
+            required: true
+          -
+            name: "meta"
+            label: "부가 정보"
+            type: "string"
+          -
+            name: "summary"
+            label: "설명"
+            type: "text"
+  -
+    name: "projects"
+    label: "04 Research Projects"
+    type: "file"
+    path: "_data/projects.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "items"
+        label: "항목 목록"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          -
+            name: "order"
+            label: "표시 순서 (작은 숫자가 위)"
+            type: "number"
+            required: true
+            default: 100
+          -
+            name: "published"
+            label: "홈페이지에 표시"
+            type: "boolean"
+            default: false
+            description: "켜고 저장하면 홈페이지에 공개됩니다. 꺼도 공개 GitHub 저장소에는 내용이 남습니다."
+          -
+            name: "title"
+            label: "제목"
+            type: "string"
+            required: true
+          -
+            name: "logos"
+            label: "기관 로고"
+            type: "select"
+            options:
+              values:
+                -
+                  name: "kaist"
+                  label: "KAIST (파란 로고)"
+                -
+                  name: "msit"
+                  label: "과학기술정보통신부"
+                -
+                  name: "mofa"
+                  label: "외교부"
+                -
+                  name: "dcc"
+                  label: "국군방첩사령부"
+                -
+                  name: "mnd"
+                  label: "대한민국 국방부 (세로)"
+                -
+                  name: "uae"
+                  label: "UAE 국기"
+                -
+                  name: "dssc"
+                  label: "군사안보지원사령부"
+                -
+                  name: "mnd_horizontal"
+                  label: "대한민국 국방부 (가로)"
+                -
+                  name: "uae_mod"
+                  label: "UAE 국방부"
+                -
+                  name: "georgia_tech"
+                  label: "Georgia Tech"
+                -
+                  name: "kma"
+                  label: "육군사관학교"
+              multiple: true
+          -
+            name: "meta"
+            label: "역할·기관·기간"
+            type: "text"
+          -
+            name: "summary"
+            label: "연구 요약"
+            type: "text"
+          -
+            name: "note_label"
+            label: "추가 설명 제목"
+            type: "string"
+          -
+            name: "note"
+            label: "추가 설명"
+            type: "text"
+  -
+    name: "experience"
+    label: "05 경력"
+    type: "file"
+    path: "_data/experience.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "items"
+        label: "항목 목록"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          -
+            name: "order"
+            label: "표시 순서 (작은 숫자가 위)"
+            type: "number"
+            required: true
+            default: 100
+          -
+            name: "published"
+            label: "홈페이지에 표시"
+            type: "boolean"
+            default: false
+            description: "켜고 저장하면 홈페이지에 공개됩니다. 꺼도 공개 GitHub 저장소에는 내용이 남습니다."
+          -
+            name: "title"
+            label: "제목"
+            type: "string"
+            required: true
+          -
+            name: "time"
+            label: "기간"
+            type: "string"
+            required: true
+          -
+            name: "roles"
+            label: "직책 (동일 기간의 직책을 함께 추가)"
+            type: "object"
+            list:
+              min: 1
+              collapsible:
+                summary: "{title}"
+            fields:
+              -
+                name: "title"
+                label: "직책"
+                type: "string"
+                required: true
+              -
+                name: "organization"
+                label: "부서·기관"
+                type: "text"
+              -
+                name: "logo"
+                label: "기관 로고"
+                type: "select"
+                options:
+                  values:
+                    -
+                      name: "kaist"
+                      label: "KAIST (파란 로고)"
+                    -
+                      name: "msit"
+                      label: "과학기술정보통신부"
+                    -
+                      name: "mofa"
+                      label: "외교부"
+                    -
+                      name: "dcc"
+                      label: "국군방첩사령부"
+                    -
+                      name: "mnd"
+                      label: "대한민국 국방부 (세로)"
+                    -
+                      name: "uae"
+                      label: "UAE 국기"
+                    -
+                      name: "dssc"
+                      label: "군사안보지원사령부"
+                    -
+                      name: "mnd_horizontal"
+                      label: "대한민국 국방부 (가로)"
+                    -
+                      name: "uae_mod"
+                      label: "UAE 국방부"
+                    -
+                      name: "georgia_tech"
+                      label: "Georgia Tech"
+                    -
+                      name: "kma"
+                      label: "육군사관학교"
+                  multiple: false
+          -
+            name: "summary"
+            label: "업무 요약"
+            type: "text"
+  -
+    name: "honors"
+    label: "06 Honors"
+    type: "file"
+    path: "_data/honors.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "items"
+        label: "항목 목록"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          -
+            name: "order"
+            label: "표시 순서 (작은 숫자가 위)"
+            type: "number"
+            required: true
+            default: 100
+          -
+            name: "published"
+            label: "홈페이지에 표시"
+            type: "boolean"
+            default: false
+            description: "켜고 저장하면 홈페이지에 공개됩니다. 꺼도 공개 GitHub 저장소에는 내용이 남습니다."
+          -
+            name: "title"
+            label: "제목"
+            type: "string"
+            required: true
+          -
+            name: "time"
+            label: "수상 시기"
+            type: "string"
+          -
+            name: "logos"
+            label: "기관 로고"
+            type: "select"
+            options:
+              values:
+                -
+                  name: "kaist"
+                  label: "KAIST (파란 로고)"
+                -
+                  name: "msit"
+                  label: "과학기술정보통신부"
+                -
+                  name: "mofa"
+                  label: "외교부"
+                -
+                  name: "dcc"
+                  label: "국군방첩사령부"
+                -
+                  name: "mnd"
+                  label: "대한민국 국방부 (세로)"
+                -
+                  name: "uae"
+                  label: "UAE 국기"
+                -
+                  name: "dssc"
+                  label: "군사안보지원사령부"
+                -
+                  name: "mnd_horizontal"
+                  label: "대한민국 국방부 (가로)"
+                -
+                  name: "uae_mod"
+                  label: "UAE 국방부"
+                -
+                  name: "georgia_tech"
+                  label: "Georgia Tech"
+                -
+                  name: "kma"
+                  label: "육군사관학교"
+              multiple: true
+          -
+            name: "meta"
+            label: "수여기관 (기관별 줄바꿈)"
+            type: "text"
+          -
+            name: "summary"
+            label: "수상 요약"
+            type: "text"
+  -
+    name: "work"
+    label: "07 Selected Work"
+    type: "file"
+    path: "_data/work.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "items"
+        label: "항목 목록"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          -
+            name: "order"
+            label: "표시 순서 (작은 숫자가 위)"
+            type: "number"
+            required: true
+            default: 100
+          -
+            name: "published"
+            label: "홈페이지에 표시"
+            type: "boolean"
+            default: false
+            description: "켜고 저장하면 홈페이지에 공개됩니다. 꺼도 공개 GitHub 저장소에는 내용이 남습니다."
+          -
+            name: "title"
+            label: "제목"
+            type: "string"
+            required: true
+          -
+            name: "meta"
+            label: "저자·행사·기관·연도"
+            type: "text"
+          -
+            name: "logos"
+            label: "기관 로고"
+            type: "select"
+            options:
+              values:
+                -
+                  name: "kaist"
+                  label: "KAIST (파란 로고)"
+                -
+                  name: "msit"
+                  label: "과학기술정보통신부"
+                -
+                  name: "mofa"
+                  label: "외교부"
+                -
+                  name: "dcc"
+                  label: "국군방첩사령부"
+                -
+                  name: "mnd"
+                  label: "대한민국 국방부 (세로)"
+                -
+                  name: "uae"
+                  label: "UAE 국기"
+                -
+                  name: "dssc"
+                  label: "군사안보지원사령부"
+                -
+                  name: "mnd_horizontal"
+                  label: "대한민국 국방부 (가로)"
+                -
+                  name: "uae_mod"
+                  label: "UAE 국방부"
+                -
+                  name: "georgia_tech"
+                  label: "Georgia Tech"
+                -
+                  name: "kma"
+                  label: "육군사관학교"
+              multiple: true
+          -
+            name: "summary"
+            label: "요약"
+            type: "text"
+          -
+            name: "award"
+            label: "수상·특기사항"
+            type: "string"
+          -
+            name: "url"
+            label: "공개 자료 링크"
+            type: "string"
+            pattern:
+              regex: "^https?://[^\\s]+$"
+              message: "https:// 또는 http://로 시작하는 공개 주소를 입력하세요. file:/// 주소는 사용할 수 없습니다."
+          -
+            name: "link_label"
+            label: "링크 문구"
+            type: "string"
+  -
+    name: "education"
+    label: "08 학력"
+    type: "file"
+    path: "_data/education.json"
+    format: "json"
+    fields:
+      -
+        name: "heading"
+        label: "섹션 제목"
+        type: "string"
+        required: true
+      -
+        name: "items"
+        label: "항목 목록"
+        type: "object"
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          -
+            name: "order"
+            label: "표시 순서 (작은 숫자가 위)"
+            type: "number"
+            required: true
+            default: 100
+          -
+            name: "published"
+            label: "홈페이지에 표시"
+            type: "boolean"
+            default: false
+            description: "켜고 저장하면 홈페이지에 공개됩니다. 꺼도 공개 GitHub 저장소에는 내용이 남습니다."
+          -
+            name: "title"
+            label: "제목"
+            type: "string"
+            required: true
+          -
+            name: "time"
+            label: "재학 기간"
+            type: "string"
+          -
+            name: "logos"
+            label: "기관 로고"
+            type: "select"
+            options:
+              values:
+                -
+                  name: "kaist"
+                  label: "KAIST (파란 로고)"
+                -
+                  name: "msit"
+                  label: "과학기술정보통신부"
+                -
+                  name: "mofa"
+                  label: "외교부"
+                -
+                  name: "dcc"
+                  label: "국군방첩사령부"
+                -
+                  name: "mnd"
+                  label: "대한민국 국방부 (세로)"
+                -
+                  name: "uae"
+                  label: "UAE 국기"
+                -
+                  name: "dssc"
+                  label: "군사안보지원사령부"
+                -
+                  name: "mnd_horizontal"
+                  label: "대한민국 국방부 (가로)"
+                -
+                  name: "uae_mod"
+                  label: "UAE 국방부"
+                -
+                  name: "georgia_tech"
+                  label: "Georgia Tech"
+                -
+                  name: "kma"
+                  label: "육군사관학교"
+              multiple: true
+          -
+            name: "meta"
+            label: "학교·지도교수"
+            type: "text"
+          -
+            name: "summary"
+            label: "추가 설명"
+            type: "text"
+  -
+    name: "branding"
+    label: "09 기관 로고"
+    type: "file"
+    path: "_data/branding.json"
+    format: "json"
+    fields:
+      -
+        name: "header"
+        label: "우측 상단 KAIST STP"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "kaist"
+        label: "KAIST (파란 로고)"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "msit"
+        label: "과학기술정보통신부"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "mofa"
+        label: "외교부"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "dcc"
+        label: "국군방첩사령부"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "mnd"
+        label: "대한민국 국방부 (세로)"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "uae"
+        label: "UAE 국기"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "dssc"
+        label: "군사안보지원사령부"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "mnd_horizontal"
+        label: "대한민국 국방부 (가로)"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "uae_mod"
+        label: "UAE 국방부"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "georgia_tech"
+        label: "Georgia Tech"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"
+      -
+        name: "kma"
+        label: "육군사관학교"
+        type: "object"
+        fields:
+          -
+            name: "src"
+            label: "로고 이미지"
+            type: "image"
+            options:
+              media: "images"
+          -
+            name: "alt"
+            label: "대체 텍스트"
+            type: "string"

@@ -1,0 +1,12 @@
+{
+  "heading": "About",
+  "paragraphs": [
+    "My research examines the intersection of technology and security. It focuses on how dual-use technologies are defined, measured, and governed, as well as how export-control regimes and geopolitical relations shape their development and diffusion.",
+    "Combining patent and citation data with computational text analysis, embedding-based retrieval, and LLM-assisted classification, I analyze these processes across patents, firms, and countries—from defense-industry innovation to cross-national knowledge flows."
+  ],
+  "current_heading": "Current Research",
+  "current_research": "My doctoral research links multilateral export-control lists with patent data to identify the sensitivity and controllability of dual-use and strategic technologies, and examines cross-border knowledge flows under geopolitical constraints.",
+  "academic_areas": "Technology–Security Nexus\nDual-Use & Strategic Technology\nExport Controls",
+  "methods": "Patent & Citation Analysis\nComputational Text Analysis",
+  "regional_interests": "East Asia\nMiddle East\nUnited States"
+}

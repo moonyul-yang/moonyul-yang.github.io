@@ -1,0 +1,10 @@
+{%- assign logo = site.data.branding[include.key] -%}
+{%- if logo.src != blank -%}
+  {%- if include.key == 'kaist' -%}
+    <span class="kaist-blue-logo"><img src="{{ logo.src | relative_url | escape }}" alt="{{ logo.alt | escape }}"></span>
+  {%- elsif include.context == 'title' and include.key == 'dcc' -%}
+    <span class="title-logo crop-logo"><img src="{{ logo.src | relative_url | escape }}" alt="{{ logo.alt | escape }}"></span>
+  {%- else -%}
+    <img{% if include.context == 'title' %} class="{% if include.key == 'uae' %}uae-flag{% else %}title-logo{% endif %}"{% elsif include.context == 'affiliation' %} class="affiliation-logo defense-logo"{% elsif include.key == 'header' %} class="top-stp-logo"{% elsif include.key == 'mofa' %} class="mofa-horizontal"{% elsif include.key == 'kma' %} class="kma"{% endif %} src="{{ logo.src | relative_url | escape }}" alt="{{ logo.alt | escape }}">
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,50 @@
+{
+  "header": {
+    "src": "/assets/images/kaist-stp.png",
+    "alt": "KAIST Graduate School of Science and Technology Policy logo"
+  },
+  "kaist": {
+    "src": "/assets/images/kaist-stp.png",
+    "alt": "KAIST logo"
+  },
+  "msit": {
+    "src": "/assets/images/msit-logo.svg",
+    "alt": "Ministry of Science and ICT logo"
+  },
+  "mofa": {
+    "src": "/assets/images/mofa-logo-horizontal-hq.png",
+    "alt": "Ministry of Foreign Affairs logo"
+  },
+  "dcc": {
+    "src": "/assets/images/dcc-logo.svg",
+    "alt": "Defense Counterintelligence Command logo"
+  },
+  "mnd": {
+    "src": "/assets/images/mnd-symbol.png",
+    "alt": "Ministry of National Defense logo"
+  },
+  "uae": {
+    "src": "/assets/images/uae-flag.webp",
+    "alt": "Flag of the United Arab Emirates"
+  },
+  "dssc": {
+    "src": "/assets/images/dssc-logo.jpg",
+    "alt": "Defense Security Support Command logo"
+  },
+  "mnd_horizontal": {
+    "src": "/assets/images/mnd-horizontal.png",
+    "alt": "Ministry of National Defense, Republic of Korea logo"
+  },
+  "uae_mod": {
+    "src": "/assets/images/uae-mod-horizontal.png",
+    "alt": "UAE Ministry of Defence logo"
+  },
+  "georgia_tech": {
+    "src": "/assets/images/georgia-tech-logo.svg",
+    "alt": "Georgia Tech logo"
+  },
+  "kma": {
+    "src": "/assets/images/kma-logo.png",
+    "alt": "Korea Military Academy logo"
+  }
+}

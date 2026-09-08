@@ -1,0 +1,27 @@
+{% assign group = site.data[include.name] %}
+{% assign entries = group.items | where: 'published', true | sort: 'order' %}
+{% if entries.size > 0 %}
+<section id="{{ include.id }}"><h2>{{ group.heading | escape }}</h2>
+{% for entry in entries %}
+<article{% if include.dated %} class="dated"{% endif %}>
+{% if include.dated %}<time>{{ entry.time | escape }}</time><div>{% endif %}
+{% if entry.logos.size > 0 and include.name == 'projects' %}
+<div class="institution-logos">{% for key in entry.logos %}{% include logo.html key=key %}{% endfor %}</div>
+{% elsif entry.logos.size > 0 and include.name == 'education' %}
+<div class="education-logo">{% for key in entry.logos %}{% include logo.html key=key %}{% endfor %}</div>
+{% endif %}
+<h3>{{ entry.title | escape }}</h3>
+{% if entry.logos.size > 0 and include.name == 'honors' %}
+<div class="honor-logos">{% for key in entry.logos %}{% include logo.html key=key %}{% endfor %}</div>
+{% endif %}
+{% if entry.meta != blank %}<p class="muted{% if include.name == 'work' and entry.logos.size > 0 %} logo-line{% endif %}">{{ entry.meta | escape | newline_to_br }}{% if include.name == 'work' %} {% for key in entry.logos %}{% include logo.html key=key %}{% endfor %}{% endif %}</p>{% endif %}
+{% if entry.summary != blank %}<p>{{ entry.summary | escape | newline_to_br }}</p>{% endif %}
+{% if entry.note != blank %}<p class="note">{% if entry.note_label != blank %}<strong>{{ entry.note_label | escape }}</strong> {% endif %}{{ entry.note | escape | newline_to_br }}</p>{% endif %}
+{% if entry.award != blank %}<p class="award">{{ entry.award | escape }}</p>{% endif %}
+{% if entry.url != blank %}{% capture entry_link %}{% include link.html url=entry.url label=entry.link_label %}{% endcapture %}{% if entry_link != blank %}<p>{{ entry_link }}</p>{% endif %}{% endif %}
+{% if include.dated %}</div>{% endif %}
+</article>
+{% endfor %}
+{% if group.methods_note != blank %}<p class="note"><strong>Methods:</strong> {{ group.methods_note | escape }}</p>{% endif %}
+</section>
+{% endif %}

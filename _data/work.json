@@ -1,0 +1,62 @@
+{
+  "heading": "Selected Work",
+  "items": [
+    {
+      "order": 10,
+      "published": true,
+      "title": "Mapping the Multilateral Export-Control Frontier of Innovation",
+      "meta": "Moonyul Yang & Seokkyun Joshua Woo · 3rd Sci-Sci Korea Workshop, Yonsei University · Sep 2026",
+      "summary": "Transforms five multilateral export-control systems into 2,619 technical decision units and links them to 8.2 million U.S. patents through semantic retrieval and LLM-assisted claim-level adjudication. The results show that fully matched patents occupy a narrower technological space, are more concentrated among assignees, and involve less international co-invention than partial or unmatched candidates.",
+      "logos": [],
+      "award": "",
+      "url": "",
+      "link_label": "Read more"
+    },
+    {
+      "order": 20,
+      "published": true,
+      "title": "An Unlikely Link: Foreign Funds and the South Korean Defense Industry",
+      "meta": "Atlanta Conference on Science and Innovation Policy, Georgia Tech, 2023",
+      "summary": "",
+      "logos": [
+        "georgia_tech"
+      ],
+      "award": "Best Early Career Poster Award—Honorable Mention",
+      "url": "",
+      "link_label": "Read more"
+    },
+    {
+      "order": 30,
+      "published": true,
+      "title": "The Evolution of National Space Development Policy from the Perspective of International Cooperation: The Korean Case",
+      "meta": "Presenter · 2023 Winter Academic Conference, Korean Defense Space Association · Dec 2023",
+      "summary": "",
+      "logos": [],
+      "award": "",
+      "url": "",
+      "link_label": "Read more"
+    },
+    {
+      "order": 40,
+      "published": true,
+      "title": "The Evolution of National Space Policy",
+      "meta": "Presenter · The 1st Space Conference, 2023",
+      "summary": "",
+      "logos": [],
+      "award": "",
+      "url": "",
+      "link_label": "Read more"
+    },
+    {
+      "order": 50,
+      "published": true,
+      "title": "Dual-use Technology: Space, Missiles, and International Politics",
+      "meta": "Behind Science, Issue 15, 2023",
+      "summary": "",
+      "logos": [],
+      "award": "",
+      "url": "",
+      "link_label": "Read more"
+    }
+  ]
+}

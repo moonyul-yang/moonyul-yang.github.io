@@ -1,0 +1,16 @@
+{% assign entries = site.data.experience.items | where: 'published', true | sort: 'order' %}
+{% if entries.size > 0 %}
+<section id="experience"><h2>{{ site.data.experience.heading | escape }}</h2>
+{% for entry in entries %}
+<article class="dated"><time>{{ entry.time | escape }}</time><div>
+{% for role in entry.roles %}
+{% if entry.roles.size > 1 %}<div class="role-block">{% endif %}
+<h3>{{ role.title | escape }} {% include logo.html key=role.logo context='title' %}</h3>
+{% if role.organization != blank %}<p class="muted">{{ role.organization | escape | newline_to_br }}</p>{% endif %}
+{% if entry.roles.size > 1 %}</div>{% endif %}
+{% endfor %}
+{% if entry.summary != blank %}<p>{{ entry.summary | escape | newline_to_br }}</p>{% endif %}
+</div></article>
+{% endfor %}
+</section>
+{% endif %}

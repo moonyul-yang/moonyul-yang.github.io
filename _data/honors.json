@@ -1,0 +1,17 @@
+{
+  "heading": "Honors",
+  "items": [
+    {
+      "order": 10,
+      "published": true,
+      "title": "Overseas Deployment Commendations",
+      "meta": "Minister of National Defense, Republic of Korea\nCommander, UAE Special Operations Command",
+      "summary": "Recognized for leading security and counterintelligence during deployment to the UAE, strengthening coordination between Korean and Emirati institutions, supporting secure bilateral defense cooperation, and contributing to the safe and stable execution of the overseas mission.",
+      "time": "Feb–Mar 2025",
+      "logos": [
+        "mnd_horizontal",
+        "uae_mod"
+      ]
+    }
+  ]
+}
