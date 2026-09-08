@@ -6,10 +6,10 @@
 {% for role in entry.roles %}
 {% if entry.roles.size > 1 %}<div class="role-block">{% endif %}
 <h3>{{ role.title | escape }} {% include logo.html key=role.logo context='title' %}</h3>
-{% if role.organization != blank %}<p class="muted">{{ role.organization | escape | newline_to_br }}</p>{% endif %}
+{% if role.organization and role.organization != empty %}<p class="muted">{{ role.organization | escape | newline_to_br }}</p>{% endif %}
 {% if entry.roles.size > 1 %}</div>{% endif %}
 {% endfor %}
-{% if entry.summary != blank %}<p>{{ entry.summary | escape | newline_to_br }}</p>{% endif %}
+{% if entry.summary and entry.summary != empty %}<p>{{ entry.summary | escape | newline_to_br }}</p>{% endif %}
 </div></article>
 {% endfor %}
 </section>

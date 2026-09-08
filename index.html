@@ -21,15 +21,15 @@ layout: null
   </div></nav>{% include logo.html key='header' %}</header>
   <main id="top">
     <aside>
-      <div class="profile-head">{% if profile.portrait != blank %}<img class="portrait" src="{{ profile.portrait | relative_url | escape }}" alt="Portrait of {{ profile.name | escape }}">{% endif %}<div class="profile-name"><h1>{{ profile.name | escape }}</h1><p class="muted">{{ profile.korean_name | escape }}</p></div></div>
+      <div class="profile-head">{% if profile.portrait and profile.portrait != empty %}<img class="portrait" src="{{ profile.portrait | relative_url | escape }}" alt="Portrait of {{ profile.name | escape }}">{% endif %}<div class="profile-name"><h1>{{ profile.name | escape }}</h1><p class="muted">{{ profile.korean_name | escape }}</p></div></div>
       <div class="profile-academic"><p><strong>{{ profile.status | escape }}</strong><br>{{ profile.university | escape }}<br>{{ profile.department | escape }}</p></div>
       <ul>
-        {% if profile.rank != blank %}<li class="affiliation">{% include logo.html key='mnd' context='affiliation' %}<span>{{ profile.rank | escape }}</span></li>{% endif %}
-        {% if profile.location != blank %}<li>{{ profile.location | escape }}</li>{% endif %}
-        {% if profile.email != blank %}<li><a href="mailto:{{ profile.email | escape }}">{{ profile.email | escape }}</a></li>{% endif %}
-        {% if profile.github_url != blank %}<li>{% include link.html url=profile.github_url label='GitHub' %}</li>{% endif %}
+        {% if profile.rank and profile.rank != empty %}<li class="affiliation">{% include logo.html key='mnd' context='affiliation' %}<span>{{ profile.rank | escape }}</span></li>{% endif %}
+        {% if profile.location and profile.location != empty %}<li>{{ profile.location | escape }}</li>{% endif %}
+        {% if profile.email and profile.email != empty %}<li><a href="mailto:{{ profile.email | escape }}">{{ profile.email | escape }}</a></li>{% endif %}
+        {% if profile.github_url and profile.github_url != empty %}<li>{% include link.html url=profile.github_url label='GitHub' %}</li>{% endif %}
       </ul>
-      {% if profile.tools != blank %}<p class="skills"><strong>Tools</strong><br>{{ profile.tools | escape }}{% if profile.tools_note != blank %}<br>{{ profile.tools_note | escape }}{% endif %}</p>{% endif %}
+      {% if profile.tools and profile.tools != empty %}<p class="skills"><strong>Tools</strong><br>{{ profile.tools | escape }}{% if profile.tools_note and profile.tools_note != empty %}<br>{{ profile.tools_note | escape }}{% endif %}</p>{% endif %}
     </aside>
     <div class="content">
       {% include about.html %}

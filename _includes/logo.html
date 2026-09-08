@@ -1,5 +1,5 @@
 {%- assign logo = site.data.branding[include.key] -%}
-{%- if logo.src != blank -%}
+{%- if logo.src and logo.src != empty -%}
   {%- if include.key == 'kaist' -%}
     <span class="kaist-blue-logo"><img src="{{ logo.src | relative_url | escape }}" alt="{{ logo.alt | escape }}"></span>
   {%- elsif include.context == 'title' and include.key == 'dcc' -%}

@@ -1,10 +1,10 @@
 {% assign about = site.data.about %}
 <section id="about"><h2>{{ about.heading | escape }}</h2>
-{% for paragraph in about.paragraphs %}{% if paragraph != blank %}<p>{{ paragraph | escape | newline_to_br }}</p>{% endif %}{% endfor %}
-{% if about.current_research != blank %}<div class="currentResearch"><h3>{{ about.current_heading | escape }}</h3><p>{{ about.current_research | escape | newline_to_br }}</p></div>{% endif %}
+{% for paragraph in about.paragraphs %}{% if paragraph and paragraph != empty %}<p>{{ paragraph | escape | newline_to_br }}</p>{% endif %}{% endfor %}
+{% if about.current_research and about.current_research != empty %}<div class="currentResearch"><h3>{{ about.current_heading | escape }}</h3><p>{{ about.current_research | escape | newline_to_br }}</p></div>{% endif %}
 <div class="interests">
-{% if about.academic_areas != blank %}<div><h3>Academic Areas</h3><p>{{ about.academic_areas | escape | newline_to_br }}</p></div>{% endif %}
-{% if about.methods != blank %}<div><h3>Methods</h3><p>{{ about.methods | escape | newline_to_br }}</p></div>{% endif %}
-{% if about.regional_interests != blank %}<div><h3>Regional Interests</h3><p>{{ about.regional_interests | escape | newline_to_br }}</p></div>{% endif %}
+{% if about.academic_areas and about.academic_areas != empty %}<div><h3>Academic Areas</h3><p>{{ about.academic_areas | escape | newline_to_br }}</p></div>{% endif %}
+{% if about.methods and about.methods != empty %}<div><h3>Methods</h3><p>{{ about.methods | escape | newline_to_br }}</p></div>{% endif %}
+{% if about.regional_interests and about.regional_interests != empty %}<div><h3>Regional Interests</h3><p>{{ about.regional_interests | escape | newline_to_br }}</p></div>{% endif %}
 </div>
 </section>
